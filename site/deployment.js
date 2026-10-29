@@ -8,7 +8,7 @@
     const deployment = await response.json();
     if (!/^[a-f0-9]{40}$/.test(deployment.commit)) throw new Error('Invalid revision');
     link.textContent = deployment.commit.slice(0, 12);
-    link.href = `https://github.com/piotrsynowiec/voicedot-review-demo/commit/${deployment.commit}`;
+    link.href = `https://github.com/voicedot/voicedot-review-demo/commit/${deployment.commit}`;
     detail.textContent = `Branch: ${deployment.branch} · Published: ${deployment.builtAt}`;
   } catch {
     link.textContent = 'Local preview — no published commit';

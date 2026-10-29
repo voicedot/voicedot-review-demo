@@ -1,8 +1,10 @@
 # VoiceDot reviewer website
 
-This repository contains a static, fictitious website. `main` is the immutable
-starting version; make authorized changes on `review`. Pushing `review` publishes
-the website, so ask for deployment authorization when it has not been given.
+This repository contains a static, fictitious website. `review` is the default
+branch and deployed working version. `main` is the locked original baseline;
+leave it unchanged. Make authorized website changes on `review`. Pushing
+`review` publishes the website, so ask for deployment authorization when it has
+not been given.
 
 Use `.voicedot.json` to select Harbor Notes, then read feedback through the
 person's current VoiceDot connection. The binding does not authorize access.
