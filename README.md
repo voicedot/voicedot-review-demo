@@ -182,9 +182,9 @@ registration uses the separate official CLI workflow described in
 [Agent setup](https://voicedot.ai/en/docs/agents). The plugin does not perform
 purchases or choose the person's plan.
 
-For integration or reviewer-access questions, use
-[Voicedot support](https://voicedot.ai/en/support). Use repository Issues for
-reproducible code problems, without credentials or private visitor content.
+For integration, reviewer-access or reproducible page problems, use
+[Voicedot support](https://voicedot.ai/en/support). Include the page URL and
+deployed commit; omit credentials and private visitor content.
 
 ## License
 
