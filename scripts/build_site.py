@@ -8,7 +8,7 @@ import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED = {"index.html", "styles.css", "deployment.js", ".nojekyll"}
+ALLOWED = {"index.html", "needs-fix.html", "styles.css", "deployment.js", ".nojekyll"}
 
 
 def build(commit, branch, destination):
@@ -37,7 +37,7 @@ def build(commit, branch, destination):
         assets[name] = f"{Path(name).stem}.{digest}{Path(name).suffix}"
     manifest_name = f"deployment.{commit}.json"
     for path in entries:
-        if path.name == "index.html":
+        if path.suffix == ".html":
             html = path.read_text()
             for name, versioned in assets.items():
                 html = html.replace(f'./{name}"', f'./{versioned}"')

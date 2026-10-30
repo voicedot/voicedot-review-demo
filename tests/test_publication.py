@@ -66,6 +66,21 @@ class PublicationTests(unittest.TestCase):
                 self.assertFalse((root / "dist" / manifest).exists())
                 self.assertEqual(json.loads((root / "dist/deployment.json").read_text())["commit"], "b" * 40)
 
+    def test_export_example_uses_versioned_assets_and_same_public_widget(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            shutil.copytree(ROOT / "site", root / "site")
+            with patch.object(publisher, "ROOT", root):
+                publisher.build("a" * 40, "review", root / "dist")
+            html = (root / "dist/needs-fix.html").read_text()
+            self.assertIn(f'data-manifest="./deployment.{"a" * 40}.json"', html)
+            self.assertNotIn('href="./styles.css"', html)
+            self.assertNotIn('src="./deployment.js"', html)
+            self.assertEqual(html.count("window.VOICEDOT_CONFIG ="), 1)
+            self.assertEqual(html.count('src="https://app.voicedot.ai/widget/v1/voicedot.js"'), 1)
+            self.assertIn('download="weekly-sync.md"', html)
+            self.assertIn("Download Markdown", html)
+
     def test_binding_is_only_a_public_project_reference(self):
         self.assertEqual(json.loads((ROOT / ".voicedot.json").read_text()),
                          {"version": 1, "projectId": "vd_project_50"})

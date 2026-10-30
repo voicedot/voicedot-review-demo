@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Harbor Notes — Export a note</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <span class="brand">Harbor Notes</span>
+      <nav aria-label="Main"><a href="./">Home</a><a href="#sample-note">Example note</a></nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div>
+          <h1>Take your notes with you.</h1>
+          <p>Download a copy of your meeting notes to keep with the rest of your team's work.</p>
+        </div>
+        <article class="note-card" id="sample-note" aria-label="Example note to export">
+          <h3>Weekly sync <small>Monday</small></h3>
+          <ul>
+            <li><b>Decision</b>Launch the new welcome email on Thursday.</li>
+            <li><b>Action</b>Maya updates the help article about sharing.</li>
+            <li><b>Question</b>Who reviews the layout on phones?</li>
+          </ul>
+          <details id="export-note">
+            <summary>Export note</summary>
+            <p><a class="button secondary" download="weekly-sync.md" href="data:text/markdown;charset=utf-8,%23%20Weekly%20sync%0A%0A-%20Decision%3A%20Launch%20the%20new%20welcome%20email%20on%20Thursday.%0A-%20Action%3A%20Maya%20updates%20the%20help%20article%20about%20sharing.%0A-%20Question%3A%20Who%20reviews%20the%20layout%20on%20phones%3F%0A">Download Markdown</a></p>
+          </details>
+        </article>
+      </div>
+      <p class="demo-note">A separate sample page for reviewing an export change. The homepage and its completed review are unchanged.</p>
+    </main>
+    <footer>Harbor Notes. A demo website.</footer>
+    <p class="deployment" aria-live="polite">Deployment: <a id="deployment-commit">loading revision…</a><br /><span id="deployment-detail">The commit is stamped by the publishing workflow.</span></p>
+    <script src="./deployment.js" defer></script>
+    <script>
+      window.VOICEDOT_CONFIG = {"accentColor":"#111111","emailPolicy":"optional","language":"en","pinEnabled":true,"position":"bottom-right","preset":"feedback","siteId":"vd_proj_I55B2u1eU1llGENz6kv2sTwlqFL0rsB_","timeLimitSeconds":120,"visualVariant":"neutral"};
+    </script>
+    <script async src="https://app.voicedot.ai/widget/v1/voicedot.js"></script>
+  </body>
+</html>

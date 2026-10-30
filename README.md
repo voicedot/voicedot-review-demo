@@ -155,7 +155,7 @@ shared branch before starting another rehearsal.
 | `.github/workflows/publish.yml` | Pinned GitHub Pages actions, restricted to `review` |
 | `AGENTS.md` | Instructions and authorization boundaries for coding agents |
 
-Only four explicit static sources and generated deployment manifests are
+Only the explicit allowlisted static sources and generated deployment manifests are
 published. Styles and scripts have content-hashed names; the HTML refers to a
 revision-specific manifest so cached assets cannot claim a newer deployment.
 The publisher contains no Voicedot or Cloudflare credential. Deployment uses
@@ -189,3 +189,17 @@ deployed commit; omit credentials and private visitor content.
 ## License
 
 [MIT](LICENSE).
+
+## Partial export review example
+
+[Export a note](https://review.voicedot.ai/needs-fix.html) is a separate sample
+page for a genuine **Needs fix** decision. The requested export menu includes
+Markdown and PDF; this first implementation offers a working Markdown download
+only. The review must describe it as partial, not claim that PDF is implemented.
+The person opens **Export note**, checks the available formats and decides
+whether the requirement is met. Only a human marks **Needs fix** or **Checked**.
+
+The page uses the existing Harbor Notes widget and public origin. It does not
+change the homepage, the accepted contrast fix or the existing completed round.
+Do not implement PDF during the recording setup: it is the explicitly documented
+unmet requirement for this scenario.
